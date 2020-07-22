@@ -1,0 +1,45 @@
+!Nested Queries!
+SELECT employee.first_name, employee.last_name
+FROM employee
+WHERE employee.emp_id IN(
+	SELECT works_with.emo_id
+	FROM works_with
+	WHERE works_with.total_sales > 30000;
+);
+
+SELECT client.client_name
+FROM client
+WHERE client.branch_id = (
+	SELECT branch.branch_id
+	FROM branch
+	WHERE branch
+	WHERE branch.mgr_id = 102
+	LIMIT 1
+);
+
+!ON DELECT!
+ON DELECT SET NULL//not necessary e.g. foreign key
+ON DELECT SET CASCADE //necessary
+
+!TRIGGERS! (TERMINAL)
+DELIMITER $$
+CREATE
+	TRIGGER my_trigger BEFORE INSERT // AFTER DELECT?
+	ON employee
+	FOR EACH ROW BEGIN
+		INSERT INTO trigger_text VALUES('added new employee');
+		//VALUES(NEW.first_name);
+		//IF NEW.sex = 'Male' THEN
+			INSERT INTO trigger_test VALUES('added male employee'');
+		    ELSEIF NEW.sex 'F' THEN
+			INSERT INTO trigger_test VALUES('added female');
+		    ELSE
+			INSERT INTO trigger_test VALUES('added other emploee');
+		    END IF;
+	END$$
+DELIMITER;
+
+DROP TRIGGER my_trigger;
+
+!ER Diagrams Intro!
+ER = Entity Relationship
