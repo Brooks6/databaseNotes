@@ -1,0 +1,41 @@
+1.Database Management System(DBMS)
+A special software program that helps users create and maintain a database
+*make it easy to manage large amounts of information
+*handles security
+*backups
+*importing/exporting data
+*concurrency //?
+*interacts with software applications
+
+2.C.R.U.D(create, read, update, delete)
+
+3.relational databases(SQL)
+Organize data into one or more tables
+*each table has columns and rows
+*a unique key identifies each row
+
+4.non-relational(noSQL/ not just SQL)
+Organize data is anything but a traditional table
+*key-value stores
+*documents(JSON, XML, etc)
+*graphs
+*flexible table
+
+5.relational database management system(RDBMS)
+Help users create and maintain a relational database
+*mySQL, Oracle, postgreSQL, mariaDB, etc
+
+6.structured query language(SQL)
+*standardized language for interacting with RDBMS
+*Used to perform C.R.U.D operations, as well as other administrative tasks(user management, security, backup, etc)
+*used to define tables and structures
+*SQL code used on one RDBMS is not always portable to another without modification
+
+7.non-relational database management systems(NRDBMS)
+Non-relational database management system(NRDBMS)
+Help users create and maintain a non-relational database
+*mongoDB, dynamoDB, apache cassandra, firebase, etc
+
+8.implementation specific
+*any non-relational database falls under this category, so there's no set language standard
+*most NRDBMS will implement their own language for performing C.R.U.D and administrative operations on the database
