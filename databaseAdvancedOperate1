@@ -1,0 +1,67 @@
+SELECT fitrst_name AS forename, last_name AS surname
+From employee;
+
+SELECT DISTINCT sex
+From employee // male female
+
+!FUNCTIONS!
+
+SELECT COUNT(imp_id)
+FROM employee 
+WHERE sex = 'F' and birth_date > '1970-01-01';
+
+SELECT AVG(salary)
+FROM employee
+WHERE sex = 'M';
+
+SELECT SUM(salary)
+FROM employee;
+
+SELECT COUNT(sex), sex
+FROM employee
+GROUP BY sex; 
+
+SELECT SUM(total_sales), emp_id
+FROM work_with
+GROUP BY emp_id;
+
+!WILDSCARDS!
+
+SELECT *
+FROM client
+WHERE client_name LIKE '%LLC'; // end in 'LLC' 
+                                              '%Lable%// somewhere contains 'Lable'
+
+SELECT *
+FROM employee
+WHERE birth_date LIKE '____-10%'; // '_' = one character
+
+!UNION!
+
+SELECT first_name //should have same number and data type
+FROM employee
+UNION
+SELECT branch_name
+FROM branch;
+
+SELECT client_name, client.branch_id
+FROM client
+UNION
+SELECT supplier_name, branch_supplier.branch_id
+FROM branch_supplier;
+
+SELECT salart
+FROM employee
+UNION SELECT total_sales
+FROM works_with;
+
+!JOINS!
+SELECT employee.emp_id, employee.first_name, branch_name
+FROM employee
+JOIN branch //LEFT JOIN all employee ; RIGHT JOIN all branch
+ON employee.emp_id = branch.mgr_id; //primary key and foreign key
+
+
+
+
+
