@@ -1,0 +1,15 @@
+1.foreign key
+*Show the relationship in 1 tables between different elements (emp)
+*Show the relationship between 2 tables
+
+2.Data Query Language(DQL)
+
+3.Data Definition Language(DDL)
+*define database schemas
+
+4.Data Control Language(DCL)
+*used for controlling access to the data in the database
+*User& permissions management
+
+5.Data Manipulation Language(DML)
+*used for inserting, updating and deleting data from the database
