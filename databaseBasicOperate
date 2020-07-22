@@ -1,0 +1,42 @@
+CREATE TABLE student (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20) ,
+    major VARCHAR(20) DEFAULT 'undecided' 
+);
+
+DESCRIBE student;/*display the struture of table*/
+
+DROP TABLE student;/*drop table*/
+
+ALTER TABLE student ADD gpa DECIMAL(3, 2);/*add column*/
+
+ALTER TABLE student DROP COLUMN gpa;/*drop column*/
+
+SELECT * FROM student;/*display the table*/
+
+INSERT INTO student(student_id, name) VALUES(1, 'Kate'); /*insert*/
+INSERT INTO student(name, major) VALUES('Kate', 'Sociology');
+
+INSERT INTO student(student_id, name) VALUE(4, NULL, 'Chemistry');
+
+UPDATE student /*update*/
+SET major = 'Bio'
+WHERE major = 'Sociology' or 'Chemistry';
+
+DELETE FROM student /*delete*/
+WHERE student_id = 2 AND major = 'undecided';
+
+SELECT *
+FROM student;
+
+SELECT student.name, student.student_id
+FROM student
+ORDER BY student.name, student.student_id DESC /*ASC*/
+LIMIT 4
+;
+
+SELECT *
+FROM student
+WHERE name IN('Claire', 'Mike', 'Brooks') AND student_id > 2;
+
+/*<> means not eaual to sth.*/
